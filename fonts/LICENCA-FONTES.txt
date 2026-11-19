@@ -1,0 +1,3 @@
+Fontes Poppins e Inter: SIL Open Font License 1.1 — https://openfontlicense.org
+Poppins: https://fonts.google.com/specimen/Poppins
+Inter: https://fonts.google.com/specimen/Inter

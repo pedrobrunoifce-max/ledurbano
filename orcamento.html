@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orçamento online de publicidade em painel de LED — Moraújo–CE | LED URBANO</title>
+<meta name="description" content="Monte sua campanha no painel de LED da LED URBANO e receba a proposta com o valor na hora. Planos a partir de R$ 190/mês.">
+<link rel="canonical" href="https://pedrobrunoifce-max.github.io/ledurbano/orcamento.html">
+<meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Orçamento online — LED URBANO"><meta property="og:description" content="Monte sua campanha no painel de LED da LED URBANO e receba a proposta com o valor na hora. Planos a partir de R$ 190/mês.">
+<meta property="og:url" content="https://pedrobrunoifce-max.github.io/ledurbano/orcamento.html"><meta property="og:image" content="https://pedrobrunoifce-max.github.io/ledurbano/img/og-image.jpg">
+<meta name="theme-color" content="#0F1419">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="fonts/poppins-700.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body data-whatsapp="5577991063089">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="top"><div class="wrap">
+<a href="index.html" aria-label="LED URBANO — página inicial"><img src="img/logo-negativo.svg" alt="LED URBANO" width="190" height="59"></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" class="nav" aria-label="Principal"><a href="index.html">Início</a><a href="solucoes.html">Planos</a><a href="simulador.html">Simule seu anúncio</a><a href="orcamento.html" aria-current="page">Orçamento</a><a href="localizacao.html">O painel</a><a href="anunciantes.html">Contato</a></nav>
+</div></header>
+<main id="conteudo">
+
+<section class="dark"><div class="wrap"><div class="eyebrow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><span>Orçamento online</span></div><h1>Monte sua campanha e receba a proposta na hora</h1>
+<p class="lead">Escolha o plano e o início. O valor aparece na hora e a proposta sai em PDF para você enviar pelo WhatsApp.</p></div></section>
+<section><div class="wrap orc-wrap">
+<form id="orc" class="card" novalidate>
+<h2>1. Sua campanha</h2>
+<div class="row"><div class="field"><label for="o-plano">Plano</label><select id="o-plano"><option value="mensal">Mensal — R$ 280/mês</option><option value="trimestral">Trimestral — R$ 230/mês</option><option value="anual" selected>Anual — R$ 190/mês</option><option value="fundador">Anunciante Fundador — R$ 190/mês + arte grátis (anual)</option><option value="avulsa15">Campanha de 15 dias — R$ 220</option></select></div>
+<div class="field"><label for="o-cotas">Cotas no ciclo</label><select id="o-cotas"><option value="1">1 cota (≈ 216 exibições/dia)</option><option value="2">2 cotas (≈ 432 exibições/dia)</option><option value="3">3 cotas (≈ 648 exibições/dia)</option></select></div></div>
+<div class="row"><div class="field"><label for="o-inicio">Início desejado</label><input type="date" id="o-inicio"></div>
+<div class="field"><label for="o-arte">Precisa de arte?</label><select id="o-arte"><option value="nao">Não, tenho a arte</option><option value="sim">Sim, criem para mim</option></select></div></div>
+<h2>2. Seus dados</h2>
+<div class="row"><div class="field"><label for="o-empresa">Empresa *</label><input id="o-empresa" maxlength="120" autocomplete="organization"></div><div class="field"><label for="o-contato">Seu nome *</label><input id="o-contato" maxlength="120" autocomplete="name"></div></div>
+<div class="row"><div class="field"><label for="o-tel">WhatsApp *</label><input id="o-tel" type="tel" maxlength="20" autocomplete="tel"></div><div class="field"><label for="o-email">E-mail</label><input id="o-email" type="email" maxlength="120" autocomplete="email"></div></div>
+<div class="field"><label for="o-seg">Segmento</label><select id="o-seg"><option value="">Selecione</option><option>Supermercado</option><option>Farmácia</option><option>Restaurante/lanchonete</option><option>Clínica/saúde</option><option>Loja/varejo</option><option>Moda</option><option>Academia</option><option>Construção</option><option>Educação</option><option>Serviços</option><option>Eventos</option><option>Outro</option></select></div>
+<div class="hp" aria-hidden="true"><label for="o-site">Não preencha</label><input id="o-site" tabindex="-1" autocomplete="off"></div>
+<div class="field"><label class="check"><input type="checkbox" id="o-lgpd"> <span>Concordo que a LED URBANO use estes dados para elaborar e enviar a proposta, conforme a <a href="privacidade.html">Política de Privacidade</a>. *</span></label></div>
+<button class="btn" type="submit">Gerar minha proposta</button><div id="o-erro" class="msg err" role="alert" hidden></div>
+</form>
+<aside class="card resumo-orc" aria-live="polite"><h2>Resumo</h2><p class="tag" id="r-plano"></p><div class="big" id="r-valor"></div><dl class="kv" id="r-kv"></dl>
+<p class="tag">Cerca de 216 exibições por dia por cota, calculadas pelo ciclo planejado de 5 minutos. O número real de cada mês vem no relatório de veiculação.</p></aside>
+</div>
+<div class="wrap"><div class="card prop" id="prop" hidden><div class="prop-top"><div><span class="tag">Proposta comercial</span><div class="code" id="p-cod"></div><span class="tag" id="p-data"></span></div><div><span class="tag">Para</span><strong id="p-cli"></strong></div></div>
+<dl class="kv" id="p-kv"></dl>
+<div class="btns"><button type="button" class="btn" id="p-pdf">Baixar proposta em PDF</button><a class="btn wa" id="p-wa" href="#" target="_blank" rel="noopener">Enviar para a LED URBANO no WhatsApp</a><button type="button" class="btn ghost-l" id="p-copiar">Copiar resumo</button></div>
+<div id="p-msg" class="msg" role="status"></div></div></div></section>
+<script src="js/minipdf.js" defer></script><script src="js/orcamento.js" defer></script>
+</main>
+<footer><div class="wrap">
+<div class="grid">
+<div><img src="img/logo-negativo.svg" alt="LED URBANO" width="170" height="53" loading="lazy" style="margin-bottom:14px">
+<p>Publicidade em painel digital de LED em Moraújo–CE.</p></div>
+<div><h3 style="color:#fff;font-size:1rem">Contato</h3><ul>
+<li><a href="https://wa.me/5577991063089" rel="noopener">WhatsApp (77) 99106-3089</a></li>
+<li><a href="https://wa.me/5585986042993" rel="noopener">WhatsApp (85) 98604-2993</a></li>
+<li><a href="mailto:ledurbanoce@gmail.com">ledurbanoce@gmail.com</a></li>
+<li><a href="https://instagram.com/ledurbano" rel="noopener">@ledurbano</a></li></ul></div>
+<div><h3 style="color:#fff;font-size:1rem">Institucional</h3><ul>
+<li><a href="sobre.html">Sobre</a></li><li><a href="privacidade.html">Privacidade e cookies</a></li><li><a href="termos.html">Termos de uso</a></li></ul></div>
+</div>
+<p class="legal">LED URBANO · 69.570.740 PEDRO BRUNO DA SILVA COSTA · CNPJ 69.570.740/0001-60 · Moraújo–CE · © 2026. Imagens de painéis com anúncios são ilustrativas (mockups) quando indicado.</p>
+</div></footer>
+<a class="wa" href="https://wa.me/5577991063089?text=Ol%C3%A1!%20Quero%20saber%20sobre%20anunciar%20no%20painel." rel="noopener" aria-label="Conversar no WhatsApp">WhatsApp</a>
+<script src="js/main.js" defer></script>
+</body>
+</html>

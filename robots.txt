@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /_fonte/
+Sitemap: https://pedrobrunoifce-max.github.io/ledurbano/sitemap.xml
