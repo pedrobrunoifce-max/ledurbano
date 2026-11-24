@@ -163,3 +163,6 @@ footer .legal{border-top:1px solid var(--linha);margin-top:36px;padding-top:20px
 .faq details[open] summary{color:#C7400D;margin-bottom:8px}
 .faq details p{margin:0}
 .btn.btn-l{background:transparent;color:#0F1419;border:1.5px solid #CFC8BC}.btn.btn-l:hover{border-color:#FF5A1F;color:#C7400D}
+
+.hero .art video{display:block;max-height:600px;width:auto;max-width:100%;margin:0 auto;border-radius:var(--r) var(--r) 0 0;background:#0F1419}
+@media (max-width:860px){.hero .art video{max-height:460px}}

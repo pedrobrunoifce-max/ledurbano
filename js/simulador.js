@@ -1,4 +1,4 @@
-// LED URBANO — simulador: mostra o vídeo ou a imagem do cliente na tela do painel real (foto noturna).
+// LED URBANO — simulador: mostra o vídeo ou a imagem do cliente na tela do painel real (foto de dia, tirada do vídeo do painel).
 // O arquivo é aberto só no navegador da pessoa; nada é enviado para servidor.
 (function () {
   "use strict";
@@ -6,8 +6,8 @@
   var stage = $("sim-stage"), foto = $("sim-foto"), tela = $("sim-tela"), input = $("sim-arquivo");
   if (!stage || !foto || !tela) return;
   var MAX_S = 15;
-  // Cantos da tela do painel na foto original (832 × 1248 px): sup. esq., sup. dir., inf. dir., inf. esq.
-  var QUAD = [[266, 236], [557, 264], [572, 762], [264, 762]];
+  // Cantos da tela do painel na foto original (810 × 1440 px): sup. esq., sup. dir., inf. dir., inf. esq.
+  var QUAD = [[295, 499], [515, 497], [515, 940], [295, 941]];
   var W0 = 1080, H0 = 2160; // tela desenhada em 1:2 e projetada sobre a foto
   var midia = null, url = null, modo = "preencher", leds = false;
 
@@ -32,7 +32,7 @@
     return [h[0], h[3], 0, h[6], h[1], h[4], 0, h[7], 0, 0, 1, 0, h[2], h[5], 0, 1];
   }
   function posicionar() {
-    var k = foto.clientWidth / (foto.naturalWidth || 832);
+    var k = foto.clientWidth / (foto.naturalWidth || 810);
     var dest = QUAD.map(function (p) { return [p[0] * k, p[1] * k]; });
     var m = matriz([[0, 0], [W0, 0], [W0, H0], [0, H0]], dest);
     tela.style.width = W0 + "px"; tela.style.height = H0 + "px";

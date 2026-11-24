@@ -1,6 +1,6 @@
 # LED URBANO — site
 
-Site estático da LED URBANO (publicidade em painel digital de LED em Moraújo–CE).
+Site estático da LED URBANO (publicidade em painel digital de LED).
 Publicado pelo GitHub Pages em https://ledurbano.com.br/
 
 - Preços: `solucoes.html`, `index.html`, `orcamento.html` e `js/orcamento.js` (objeto PLANOS).

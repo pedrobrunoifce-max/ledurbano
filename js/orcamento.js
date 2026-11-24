@@ -46,7 +46,7 @@
   var prop = null;
   function codigo() { var d = new Date(), p = function (n) { return String(n).padStart(2, "0"); }; return "LU-" + d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + "-" + Math.random().toString(36).slice(2, 6).toUpperCase(); }
   function resumo(p) {
-    return "Proposta " + p.codigo + " — LED URBANO\nEmpresa: " + p.empresa + " (" + p.contato + ", " + p.tel + ")\n" + linhas(p.o).map(function (l) { return l[0] + ": " + l[1]; }).join("\n") + "\nPainel: Av. Pref. Raimundo Benício, Moraújo–CE · 5h às 23h\nVálida até " + dbr(p.validade);
+    return "Proposta " + p.codigo + " — LED URBANO\nEmpresa: " + p.empresa + " (" + p.contato + ", " + p.tel + ")\n" + linhas(p.o).map(function (l) { return l[0] + ": " + l[1]; }).join("\n") + "\nPainel: Av. Pref. Raimundo Benício, 5h às 23h\nVálida até " + dbr(p.validade);
   }
   f.addEventListener("submit", function (ev) {
     ev.preventDefault(); var err = $("o-erro"); err.hidden = true;
@@ -80,14 +80,14 @@
     function row(k, v, b) { doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(110, 119, 130); doc.text(k, M, y); doc.setFont("helvetica", b ? "bold" : "normal"); doc.setFontSize(10.5); doc.setTextColor(28, 33, 40); var ls = doc.splitTextToSize(String(v), W - 2 * M - 190); doc.text(ls, M + 190, y); y += 15 * ls.length + 4; }
     sec("Cliente"); row("Empresa", prop.empresa); row("Responsável", prop.contato); row("Contato", [prop.tel, prop.email].filter(Boolean).join(" · ")); if (prop.seg) row("Segmento", prop.seg);
     y += 6; sec("Campanha");
-    row("Painel", "LED outdoor P5, 1 m × 2 m vertical · Av. Pref. Raimundo Benício, Moraújo–CE"); row("Horário", "Todos os dias, das 5h às 23h · ciclo de 20 posições (5 min)");
+    row("Painel", "LED outdoor P5, 1 m × 2 m vertical · Av. Pref. Raimundo Benício"); row("Horário", "Todos os dias, das 5h às 23h · ciclo de 20 posições (5 min)");
     linhas(o).forEach(function (l) { row(l[0], l[1], l[2] === "total"); });
     y += 6; sec("Condições");
     ["Pagamento por Pix ou boleto, com vencimento mensal. A 1ª parcela é paga antes do início.", "Vídeo ou imagem vertical 1080 × 2160 px, até 15 s, sem áudio. 1 troca de arte por mês incluída; troca extra R$ 30.", "A veiculação começa até 2 dias úteis após a arte aprovada e o pagamento.", "Relatório mensal de veiculação. Exibições perdidas por falha técnica são compensadas.", "A LED URBANO não garante número de pessoas impactadas ou vendas: o serviço é a exibição das inserções. O contrato de veiculação prevalece sobre esta proposta."].forEach(function (t) {
       doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(58, 64, 72); var ls = doc.splitTextToSize("• " + t, W - 2 * M); doc.text(ls, M, y); y += 13 * ls.length + 3;
     });
     doc.setFillColor(15, 20, 25); doc.rect(0, 795.89, W, 46, "F"); doc.setFontSize(8); doc.setTextColor(174, 182, 191);
-    doc.text("LED URBANO · CNPJ 69.570.740/0001-60 · Moraújo–CE", M, 814); doc.text("WhatsApp (77) 99106-3089 · (85) 98604-2993 · ledurbanoce@gmail.com", M, 826);
+    doc.text("LED URBANO · CNPJ 69.570.740/0001-60", M, 814); doc.text("WhatsApp (77) 99106-3089 · (85) 98604-2993 · ledurbanoce@gmail.com", M, 826);
     var blob = doc.output("blob"), a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = prop.codigo + "_LED-URBANO.pdf"; document.body.appendChild(a); a.click();
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 2000); msg("PDF baixado.", true);
   });
