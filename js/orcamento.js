@@ -61,6 +61,28 @@
     var box = $("prop"); box.hidden = false; box.scrollIntoView({ behavior: "smooth", block: "start" });
   });
   function msg(t, ok) { var m = $("p-msg"); m.textContent = t; m.className = "msg " + (ok ? "ok" : "err"); m.style.display = "block"; }
+
+  // Fechar contrato: abre o WhatsApp com a proposta e envia uma cópia por e-mail (FormSubmit)
+  var EMAIL = "ledurbanoce@gmail.com";
+  $("p-fechar").addEventListener("click", function () {
+    if (!prop) return;
+    var texto = "Olá! Quero FECHAR CONTRATO da proposta " + prop.codigo + " gerada no site.\n\n" + resumo(prop);
+    window.open("https://wa.me/" + WHATS + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+    if (prop.emailEnviado) return msg("WhatsApp aberto. A cópia por e-mail já tinha sido enviada.", true);
+    var o = prop.o, dados = {
+      _subject: "Fechar contrato — proposta " + prop.codigo + " — " + prop.empresa,
+      _template: "table", _captcha: "false",
+      Proposta: prop.codigo, Empresa: prop.empresa, Responsavel: prop.contato, WhatsApp: prop.tel, Email: prop.email || "-", Segmento: prop.seg || "-",
+      Plano: o.P.nome, Cotas: o.cotas, Periodo: dbr(o.inicio) + " a " + dbr(o.fim), Valor_mensal: brl(o.mensal), Total_estimado: brl(o.total),
+      Validade: dbr(prop.validade), Resumo: resumo(prop)
+    };
+    if (prop.email) dados._replyto = prop.email;
+    msg("Abrindo o WhatsApp e enviando a proposta por e-mail…", true);
+    fetch("https://formsubmit.co/ajax/" + EMAIL, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(dados) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || String(j.success) === "false") throw 0; }); })
+      .then(function () { prop.emailEnviado = true; msg("Pronto! A proposta foi enviada por e-mail para a LED URBANO. Conclua a conversa no WhatsApp.", true); })
+      .catch(function () { msg("WhatsApp aberto. Não conseguimos enviar o e-mail agora — a proposta segue pelo WhatsApp normalmente.", false); });
+  });
   $("p-copiar").addEventListener("click", function () {
     if (!prop) return; var t = resumo(prop);
     var fb = function () { var ta = document.createElement("textarea"); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); msg("Resumo copiado.", true); } catch (e) { msg("Selecione e copie o resumo.", false); } ta.remove(); };

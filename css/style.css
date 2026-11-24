@@ -166,3 +166,7 @@ footer .legal{border-top:1px solid var(--linha);margin-top:36px;padding-top:20px
 
 .hero .art video{display:block;max-height:600px;width:auto;max-width:100%;margin:0 auto;border-radius:var(--r) var(--r) 0 0;background:#0F1419}
 @media (max-width:860px){.hero .art video{max-height:460px}}
+
+.fechar{margin:22px 0 14px;padding:18px;border-radius:12px;background:#FFF3EC;border:1px solid #FFD2BC}
+.btn.btn-fechar{width:100%;justify-content:center;text-align:center;font-size:1.12rem;padding:16px 24px}
+.fechar .tag{margin:10px 0 0;text-align:center}
