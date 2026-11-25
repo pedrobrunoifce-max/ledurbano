@@ -21,6 +21,7 @@
   var hoje = iso(new Date()); var ini = $("o-inicio"); ini.min = hoje; ini.value = addDias(hoje, 7);
   if (hoje > FUNDADOR_ATE) { var of = f.querySelector("option[value=fundador]"); if (of) of.remove(); }
 
+  try { var pq = new URLSearchParams(location.search).get("plano"); if (pq && PLANOS[pq] && f.querySelector("#o-plano option[value=" + pq + "]")) $("o-plano").value = pq; } catch (e) {}
   function calcular() {
     var pz = $("o-plano").value, P = PLANOS[pz] || PLANOS.mensal, cotas = Math.max(1, Math.min(3, Number($("o-cotas").value) || 1));
     var inicio = ini.value && ini.value >= hoje ? ini.value : addDias(hoje, 7);
